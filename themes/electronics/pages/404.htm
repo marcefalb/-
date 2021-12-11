@@ -1,0 +1,42 @@
+title = 404
+url = "/404"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<style>
+	.not-found__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 30px;
+		
+		height: 600px;
+		width: 100%;
+		
+		background-color: #fff;
+		border-radius: 10px;
+	}
+	.not-found h1 {
+		color: #fff;
+		text-shadow: -2px 3px 7px #2d2d2d;
+		text-stroke: 1px #2d2d2d;
+		-webkit-text-stroke: 1px #2d2d2d;
+		
+		font-size: 72px;
+		font-family: 'Marmelad', sans-serif;
+	}
+	.not-found p {
+		font-size: 24px;
+		font-weight: 500;
+	}
+</style>
+
+<section class="not-found">
+	<div class="wrapper not-found__wrapper">
+		<h1>404</h1>
+		<p>Извините, страница не найдена...</p>
+	</div>
+</section>

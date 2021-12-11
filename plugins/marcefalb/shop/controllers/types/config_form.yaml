@@ -1,0 +1,10 @@
+name: Types
+form: $/marcefalb/shop/models/types/fields.yaml
+modelClass: Marcefalb\Shop\Models\Types
+defaultRedirect: marcefalb/shop/types
+create:
+    redirect: 'marcefalb/shop/types/update/:id'
+    redirectClose: marcefalb/shop/types
+update:
+    redirect: marcefalb/shop/types
+    redirectClose: marcefalb/shop/types

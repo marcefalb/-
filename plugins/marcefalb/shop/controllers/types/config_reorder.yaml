@@ -1,0 +1,4 @@
+title: Types
+modelClass: Marcefalb\Shop\Models\Types
+toolbar:
+    buttons: reorder_toolbar

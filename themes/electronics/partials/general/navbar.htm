@@ -1,0 +1,26 @@
+description = "Навбар с комплектующими"
+
+[Types]
+==
+<div class="navbar-bg"></div>
+<aside class="navbar">
+	<a class="navbar__header" href="{{ '/tipy-komplektuyushchih' }}">
+		<span>Комплектующие</span>
+		<img src="{{ 'assets/icons/ic_computer.svg'|theme }}" alt="">
+	</a>
+	<ul class="navbar__list">
+		
+		{% set types = Types.types %}
+		{% for type in types %}
+		
+		<li class="navbar__list-item">
+			<a href="/spisok-tovarov?type={{ type.name }}" class="navbar__list-link">
+				<span>{{ type.name }}</span>
+				{% partial 'icons/arrow' %}
+			</a>
+		</li>
+		
+		{% endfor %}
+		
+	</ul>
+</aside>

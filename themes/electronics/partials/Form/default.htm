@@ -1,0 +1,32 @@
+description = "Шаблон для формы обратной связи"
+==
+<form class="form__form" method="" action="" data-request="{{ __SELF__ }}::onFormSubmit" id="CF" name="CF">
+  {{ form_token() }}
+    <div class="form__item">
+      <span>Имя*</span>
+      <input type="text" class="form__input" id="name" name="Имя" placeholder="Иван Александров">
+      <hr>
+    </div>
+
+    <div class="form__item">
+      <span>Почта*</span>
+      <input type="email" class="form__input" id="email" name="Почта" placeholder="example@email.info">
+            <hr>
+    </div>
+
+    <div class="form__item">
+      <span>Телефон</span>
+      <input type="tel" class="form__input" id="phone" name="Телефон" placeholder="+7 (921) 245-12-65">
+      <hr>
+    </div>
+
+    <div id="{{ __SELF__ }}_forms_flash" class="forms_flash"></div>
+    
+    <div class="form_bottom">
+      <button type="submit" class="form__btn">Отправить</button>
+      <div class="form__processing">
+        <input type="checkbox" class="form__checkbox" required id="agree"> <label for="agree">Я согласен с условиями обработки <a class="person-data">персональных данных</a></label>
+      </div>
+    </div>
+    
+</form>

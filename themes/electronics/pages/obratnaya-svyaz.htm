@@ -1,0 +1,40 @@
+title = "Обратная связь"
+url = "/obratnaya-svyaz"
+layout = "default"
+description = "Страница для связи с администраторами сайта"
+meta_title = "Обратная связь"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[genericForm Form]
+rules[Имя] = "required"
+rules[Почта] = "required"
+rules_messages[Имя.required] = "Имя"
+rules_messages[Почта.required] = "Почта"
+messages_success = "Форма успешно отправлена!"
+messages_errors = "Необходимо указать следующую информацию:"
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+<link rel="stylesheet" href="{{ 'assets/css/form.css'|theme }}">
+<section class="form">
+	<div class="wrapper form__wrapper">
+		<div class="form__content">
+			<div class="form__header">
+				<h1>Возникли вопросы?</h1>
+				<p>Свяжитесь с нами, оставив свои контактные данные, и мы поможем вам с решением ваших вопросов</p>
+			</div>
+			<div class="form__content">
+				{% component 'Form' %}
+			</div>
+		</div>
+	</div>
+</section>
+
+<script src="{{ 'assets/js/form.js'|theme }}"></script>

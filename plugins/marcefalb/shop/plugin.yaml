@@ -1,0 +1,20 @@
+plugin:
+    name: 'marcefalb.shop::lang.plugin.name'
+    description: 'marcefalb.shop::lang.plugin.description'
+    author: marcefalb
+    icon: oc-icon-shopping-cart
+    homepage: ''
+navigation:
+    Shop:
+        label: Магазин
+        url: marcefalb/shop/products
+        icon: icon-shopping-cart
+        sideMenu:
+            products:
+                label: Товары
+                url: marcefalb/shop/products
+                icon: icon-desktop
+            types:
+                label: 'Типы комплектующих'
+                url: marcefalb/shop/types
+                icon: icon-list-alt

@@ -1,0 +1,138 @@
+title = "Главная"
+url = "/"
+layout = "default"
+description = "Главная страница"
+meta_title = "Electronics - интернет-магазин комплектующих для компьютера"
+meta_description = "Интернет-магазин Electronics готов предоставить вам все необходимые комплектующие для Вашего компютера"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts news]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "novost"
+==
+<link rel="stylesheet" href="{{ 'assets/css/main.css'|theme }}">
+
+<div class="wrapper main__wrapper">
+	<div class="main__intro-blocks">
+		{% partial 'general/navbar' %}
+		<div class="filter">
+					<img src="{{ 'assets/icons/ic_filter.svg'|theme }}" alt="filter">
+		</div>
+		<section class="main-blocks">
+			<section class="main-block">
+				<div class="swiper">
+					<div class="swiper-wrapper">
+						<img class="swiper-slide" src="{{ 'assets/images/slide2.png'|theme }}" alt="">
+						<img class="swiper-slide" src="{{ 'assets/images/slide1.png'|theme }}" alt="">
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<div class="main-block__other">
+					<span class="main-block__title">Последние новости</span>
+					<ul class="main-block__services-list">
+						
+						{% set news = news.posts %}
+						{% for post in posts %}
+						
+							<li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+						
+						{% endfor %}
+						
+					</ul>
+				</div>
+			</section>
+			
+			<section class="main-new">
+				<h2 class="main-new__title">Новые предложения</h2>
+				<ul class="main-new__list">
+					
+					{% set products = Products.newProducts %}
+					{% for product in products %}
+					
+						<li class="main-new__item" title="{{ product.name }}">
+							<a href="{{ 'tovar'|page({id: product.id}) }}" class="main-new__item-link">
+								<div class="main-new__item_top">
+									<div class="main-new__item-img">
+										{% if product.image_1.path %}
+											<img src="{{ product.image_1.path }}" alt="">
+										{% else %}
+											<img src="{{ 'assets/icons/ic_plug.svg'|theme }}" alt="">
+										{% endif %}
+									</div>
+									<span class="main-new__item-name">{{ product.name }}</span>
+								</div>
+								<div class="main-new__item-info">{{ product.brief_specifications|raw }}</div>
+								<div class="main-new__item-gradient"></div>
+							</a>
+						</li>
+					
+					{% endfor %}
+				</ul>
+			</section>
+		</section>
+	</div>
+
+	<section class="main-hits">
+		<h2 class="main-hits__title">Хиты продаж</h2>
+		<ul class="main-hits__list">
+
+			{% set popularProducts = Products.popularProducts %}
+			{% for product in popularProducts %}
+
+				<li class="main-hits__item" title="{{ product.name }}">
+					<a href="{{ 'tovar'|page({id: product.id}) }}" class="main-hits__item-link">
+						<div class="main-hits__item-img">
+							{% if product.image_1.path %}
+								<img src="{{ product.image_1.path }}" alt="">
+							{% else %}
+								<img src="{{ 'assets/icons/ic_plug.svg'|theme }}" alt="">
+							{% endif %}
+						</div>
+						<p class="main-hits__item-name">{{ product.name }}</p>
+						<span class="main-hits__item-price">{{ product.price }} &#8381;</span>
+						<div class="main-hits__item_bottom">
+							{% partial 'buttons/like' type="short" id=product.id %}
+							{% partial 'buttons/cart' type="short" id=product.id %}
+						</div>
+					</a>
+				</li>
+
+			{% endfor %}
+
+		</ul>
+	</section>
+
+	<section class="main-about">
+		<div class="main-about__item">
+			<img src="{{ 'assets/icons/ic_box.svg'|theme }}" alt="">
+			<span>Более 123</span>
+			<p>всевозможных комплектующих</p>
+		</div>
+
+		<div class="main-about__item">
+			<img src="{{ 'assets/icons/ic_shop.svg'|theme }}" alt="">
+			<span>Более 182</span>
+			<p>торговых точек</p>
+		</div>
+
+		<div class="main-about__item">
+			<img src="{{ 'assets/icons/ic_wallet.svg'|theme }}" alt="">
+			<span>Оплата</span>
+			<p>любыми возможными способами</p>
+		</div>
+
+		<div class="main-about__item">
+			<img src="{{ 'assets/icons/ic_hands.svg'|theme }}" alt="">
+			<span>Гарантированность</span>
+			<p>хороших товаров</p>
+		</div>
+	</section>
+</div>
+
+<script src="{{ 'assets/js/main.js'|theme }}"></script>

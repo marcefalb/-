@@ -1,0 +1,43 @@
+title = "Новости"
+url = "/novosti"
+layout = "default"
+description = "Страница новостей"
+meta_title = "Новости"
+is_hidden = 0
+
+[blogPosts news]
+pageNumber = "{{ :page }}"
+postsPerPage = 100
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "novost"
+==
+<link rel="stylesheet" href="{{ 'assets/css/news.css'|theme }}">
+
+<section class="news">
+  <h1 class="news__title wrapper">Новости</h1>
+  <div class="wrapper news__wrapper">
+    <ul class="news__list">
+
+      {% set posts = news.posts %}
+      {% for post in posts %}
+
+      <li class="news__item">
+        <a href="{{ post.url }}" class="news__link">
+          <div class="news__item_left">
+            <span class="news__item-title">{{ post.title }}</span>
+            <span class="news__item-date">{{ post.published_at | date('d F Y') }}</span>
+            <p class="news__item-summary">{{ post.summary }}</p>
+          </div>
+          <div class="news__item_right">
+            <img src="{{ post.featured_images[0].path }}" alt="" class="news__item-img">
+          </div>
+        </a>
+      </li>
+
+      {% endfor %}
+
+    </ul>
+  </div>
+</section>

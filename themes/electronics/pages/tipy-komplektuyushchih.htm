@@ -1,0 +1,38 @@
+title = "Типы комплектующих"
+url = "/tipy-komplektuyushchih"
+layout = "default"
+description = "Страница категорий всех товаров"
+meta_title = "Комплектующие для ПК"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Types]
+==
+<link rel="stylesheet" href="{{ 'assets/css/types.css'|theme }}">
+
+<section class="types">
+	<div class="types__wrapper wrapper">
+		<h1 class="title">Выберите интересующую вас категорию</h1>
+		<ul class="types__list">
+	
+			{% set types = Types.types %}
+			{% for type in types %}
+	
+				<li class="types__item">
+					<a href="/spisok-tovarov?type={{ type.name }}" class="types__link">
+						<div class="types__img">
+							<img src="{{ type.image.path }}" alt="">
+						</div>
+						<div class="types__info">
+							<span class="types__name">{{ type.name }}</span>
+							<p class="types__description">{{ type.description }}</p>
+						</div>
+					</a>
+				</li>
+	
+			{% endfor %}
+
+		</ul>
+	</div>
+</section>

@@ -1,0 +1,45 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+        width: 10%
+    name:
+        label: Название
+        type: text
+        searchable: true
+        width: 25%
+    company:
+        label: Компания
+        type: text
+        searchable: true
+        sortable: true
+        width: 10%
+    price:
+        label: Стоимость
+        type: number
+        sortable: true
+        width: 10%
+    type:
+        label: Тип
+        type: number
+        searchable: true
+        sortable: true
+        width: 15%
+    number_in_stock:
+        label: 'Количество в наличии'
+        type: number
+        sortable: true
+        width: 10%
+    number_sold:
+        label: 'Количество проданных'
+        type: number
+        sortable: true
+        width: 10%
+    created_at:
+        label: 'Дата добавления'
+        type: date
+        searchable: true
+        sortable: true
+        width: 15%

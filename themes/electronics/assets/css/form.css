@@ -1,0 +1,125 @@
+.form__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  padding: 30px 20px;
+
+  background-color: #fff;
+  border-radius: 10px;
+}
+.form__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.form__header h1 {
+  font-size: 32px;
+  text-align: center;
+}
+.form__header p {
+  color: var(--gray);
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+.form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.form__item {
+  display: flex;
+  flex-direction: column;
+}
+.form__item hr {
+	width: 0;
+	height: 1px;
+	background-color: var(--main);
+	transition: all .5s;
+}
+.form__item span {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.form__input {
+  padding: 19px 25px;
+  border: 1px solid var(--border);
+  font-size: 18px;
+}
+.form_bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.form__btn {
+  padding: 12.5px 40px;
+  margin-top: 15px;
+  
+  color: var(--main);
+  background-color: inherit;
+  border: 2px solid var(--main);
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-size: 20px;
+
+  transition: all .3s;
+}
+.form__btn:hover {
+  color: #fff;
+  background-color: var(--main);
+}
+.forms_flash button {
+  display: none;
+}
+.forms_flash .alert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.forms_flash h4 {
+  color: red;
+  opacity: .5;
+  font-size: 18px;
+  text-align: center;
+}
+.forms_flash ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-top: 10px;
+}
+.forms_flash li {
+  font-size: 16px;
+  align-self: flex-start;
+  color: red;
+  opacity: .65;
+}
+
+@media screen and (max-width: 576px) {
+	.form__header h1 {
+		font-size: 24px;
+	}
+	.form__header p {
+		font-size: 16px;
+	}
+	.form .wrapper {
+		padding: 0;
+	}
+	.form__content {
+		padding: 20px 10px;
+	}
+	.form__btn {
+		width: 100%;
+	}
+	.form__processing {
+		display: flex;
+		gap: 10px;
+	}
+}

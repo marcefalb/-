@@ -1,0 +1,77 @@
+title = "Товар"
+url = "/tovar/:id"
+layout = "default"
+description = "Страница товара"
+meta_title = "Товар"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[builderDetails product]
+modelClass = "Marcefalb\Shop\Models\Products"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+==
+{% set product = product.record %}
+<link rel="stylesheet" href="{{ 'assets/css/product.css'|theme }}">
+
+<section class="product">
+  <div class="wrapper product__wrapper">
+    <div class="product__block">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+        	
+        	{% if product.image_1.path or product.image_2.path or product.image_3.path %}
+        	
+	          <img class="swiper-slide" src="{{ product.image_1.path }}">
+	          {% if product.image_2.path %}
+	            <img class="swiper-slide" src="{{ product.image_2.path }}">
+	          {% endif %}
+	          {% if product.image_3.path %}
+	            <img class="swiper-slide" src="{{ product.image_3.path }}">
+	          {% endif %}
+	          
+	        {% else %}
+	        
+						<img src="{{ 'assets/icons/ic_plug.svg'|theme }}" alt="">
+						
+					{% endif %}
+					
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div class="product__info">
+        <h1 class="product__name">{{ product.attributes.name }}</h1>
+        <div class="product__type">
+          <span>Категория: </span>
+          <p>{{ product.attributes.type }}</p>
+        </div>
+        <div class="product__company">
+          <span>Производитель: </span>
+          <p>{{ product.attributes.company }}</p>
+        </div>
+        <span class="product__price">{{ product.attributes.price }} &#x20bd;</span>
+        <div class="product__btns">
+          {% partial 'buttons/like' type="default" id=product.id %}
+          {% partial 'buttons/cart' type="default" id=product.id %}
+        </div>
+      </div>
+    </div>
+    <div class="product__description">
+      <div class="product__tabs_header">
+        <span id="description">Описание</span>
+        <span id="specification">Характеристики</span>
+      </div>
+      <div class="product__tabs_body">
+        <div class="product__tab-description">{{ product.attributes.brief_specifications|raw }}</div>
+        <div class="product__tab-specifications">{{ product.attributes.full_specifications|raw }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ 'assets/js/product.js'|theme }}"></script>

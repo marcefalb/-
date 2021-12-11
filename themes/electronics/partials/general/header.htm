@@ -1,0 +1,73 @@
+description = "Шапка"
+==
+<div class="wrapper header__wrapper">
+	<div class="header__logo">
+    <a href="{{ '/' }}">
+      <img src="{{ 'assets/icons/ic_logo-light.svg'|theme }}" alt="Лого">
+    </a>
+  </div>
+
+  <div class="header__search">
+    <form class="header__input-group form__search">
+      <input type="text" name="search">
+      <button class="header__search-btn">
+        <img src="{{ 'assets/icons/ic_search.svg'|theme }}" alt="Поиск">
+      </button>
+    </form>
+  </div>
+
+  <div class="header__links">
+    <ul class="header__links-list">
+      <li class="info-dropdown">
+        <button class="info-dropdown__btn">Информация</button>
+        <ul class="info-dropdown__list">
+          <li class="info-dropdown__item">
+            <a href="{{ '/o-nas' }}">О нас</a>
+          </li>
+          <hr>
+          <li class="info-dropdown__item">
+            <a href="{{ '/novosti' }}">Новости</a>
+          </li>
+          <hr>
+          <li class="info-dropdown__item">
+            <a href="{{ '/obratnaya-svyaz' }}">Обратная связь</a>
+          </li>
+        </ul>
+      </li>
+      <li class="header__link-item">
+        <a href="{{ '/izbrannoe' }}">
+          <img src="{{ 'assets/icons/ic_like.svg'|theme }}" alt="Избранное">
+        </a>
+      </li>
+      </li>
+      <li class="header__link-item">
+        <a href="{{ '/korzina ' }}">
+          <img src="{{ 'assets/icons/ic_bag.svg'|theme }}" alt="Корзина">
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <nav class="mobile-menu">
+    <input type="checkbox" id="checkbox" class="mobile-menu__checkbox">
+    <label for="checkbox" class="mobile-menu__btn"><div class="mobile-menu__icon"></div></label>
+    <div class="mobile-menu__container">
+    <ul class="mobile-menu__list">
+        <li class="mobile-menu__item"><a href="{{ '/o-nas' }}" class="mobile-menu__link">О компании</a></li>
+        <li class="mobile-menu__item"><a href="{{ '/novosti' }}" class="mobile-menu__link">Новости</a></li>
+        <li class="mobile-menu__item"><a href="{{ '/obratnaya-svyaz' }}" class="mobile-menu__link">Обратная связь</a></li>
+        <li class="mobile-menu__item"><a href="{{ '/izbrannoe' }}" class="mobile-menu__link">Избранное</a></li>
+        <li class="mobile-menu__item"><a href="{{ '/korzina ' }}" class="mobile-menu__link">Корзина</a></li>
+        <li class="mobile-menu__item">
+        	<form action="" class="header__input-group">
+			      <input type="text" name="search">
+			      <button class="header__search-btn">
+			        <img src="{{ 'assets/icons/ic_search.svg'|theme }}" alt="Поиск">
+			      </button>
+        	</form>
+        </li>
+    </ul>
+    </div>
+</nav>
+  
+</div>

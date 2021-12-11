@@ -1,0 +1,74 @@
+fields:
+    name:
+        label: 'Название комплектующего'
+        span: auto
+        placeholder: 'AMD FX-4300 OEM'
+        type: text
+    type:
+        label: 'Тип комплектующего'
+        span: auto
+        type: types
+    price:
+        label: Стоимость
+        span: auto
+        cssClass: text-left
+        type: number
+    company:
+        label: Компания
+        span: auto
+        placeholder: Intel
+        default: ''
+        type: text
+    number_in_stock:
+        label: 'Количество в наличии'
+        span: auto
+        type: number
+    number_sold:
+        label: 'Количество проданных'
+        span: auto
+        type: number
+    updated_at:
+        label: 'Дата последнего обновления'
+        mode: date
+        span: auto
+        type: datepicker
+    brief_specifications:
+        label: 'Краткое описание характеристик'
+        size: large
+        span: full
+        type: richeditor
+    full_specifications:
+        label: 'Полное описание характеристик'
+        size: giant
+        span: full
+        type: richeditor
+    image_1:
+        label: 'Изображение 1'
+        mode: image
+        fileTypes: 'png, jpg'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+    image_2:
+        label: 'Изображение 2'
+        mode: image
+        fileTypes: 'png, jpg'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+    image_3:
+        label: 'Изображение 3'
+        mode: image
+        fileTypes: 'png, jpg'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload

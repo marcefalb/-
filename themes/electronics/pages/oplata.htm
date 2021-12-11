@@ -1,0 +1,91 @@
+title = "Оплата"
+url = "/oplata"
+layout = "default"
+meta_title = "Оплата заказа"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<link rel="stylesheet" href="{{ 'assets/css/payment.css'|theme }}">
+<link rel="stylesheet" href="{{ 'assets/css/modal.css'|theme }}">
+
+<section class="payment">
+  <div class="payment__wrapper wrapper">
+    <h1 class="title">Оплата</h1>
+    <div class="payment__block">
+      <p class="payment__label">Выберите удобный способ получения/доставки:</p>
+      <div class="payment__get">
+        <div class="payment__get_header">
+          <span id="self-get">Самовывоз</span>
+          <span id="delivery">Доставка на дом</span>
+        </div>
+        <div class="payment__get_body">
+          <div class="payment__get-self payment__get_body-item">
+            <div class="payment__get-item">
+              <input type="radio" id="self-radio1" name="self-radio">
+              <label for="self-radio1">ул. Вольная, д. 7 к. 4</label>
+            </div>
+            <div class="payment__get-item">
+              <input type="radio" id="self-radio2" name="self-radio">
+              <label for="self-radio2">ул. Вишневая, д. 65а</label>
+            </div>
+            <div class="payment__get-item">
+              <input type="radio" id="self-radio3" name="self-radio">
+              <label for="self-radio3">ул. Малая Самара, д. 36</label>
+            </div>
+          </div>
+          <div class="payment__get-delivery payment__get_body-item">
+            <div class="payment__get-input">
+              <label for="delivery-get">Адрес: </label>
+              <input type="text" id="delivery-address">
+            </div>
+            <div class="payment__get-input">
+              <label for="delivery-get">Дата и приблизительное время доставки: </label>
+              <input type="text" id="delivery-date">
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="payment__label">Выберите удобный способ оплаты:</p>
+      <div class="payment__types">
+        <p class="payment__accordion-fake payment__accordion-body_active">Наличными или картой при получении</p>
+        <div class="payment__accordion payment__accordion-body_active">
+          <div class="payment__accordion-header">
+            Банковской картой на сайте
+          </div>
+          <div class="payment__accordion-body">
+            <div class="payment__accordion-body_top">
+              <div class="payment__accordion-item">
+                <label for="date">Номер карты</label>
+                <input type="text" id="number" placeholder="2134 4567 1235 5678">
+              </div>
+            </div>
+            <div class="payment__accordion-body_bottom">
+              <div class="payment__accordion-item">
+                <label for="date">До</label>
+                <input type="text" id="date" placeholder="03 / 24">
+              </div>
+              <div class="payment__accordion-item">
+                <label for="secret-code">CCV2/CVV2</label>
+                <input type="text" id="secret-code" placeholder="765">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="payment__btn">
+        <button>Оплатить</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="modal">
+  <div class="modal__container">
+    <p>Спасибо, что выбрали <br>Electronics!</p>
+    <img src="{{ 'assets/icons/ic_ok.svg'|theme }}" alt="">
+  </div>
+</section>
+
+<script src="{{ 'assets/js/modal.js'|theme }}"></script>
+<script src="{{ 'assets/js/payment.js'|theme }}"></script>

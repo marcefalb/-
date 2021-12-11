@@ -1,0 +1,6 @@
+description = "Кнопка \"В избранное\""
+==
+<button class="to-like" data-request-data="id:{{ id }}" data-id="{{id}}">
+	{% partial 'icons/like' %}
+	{{ type == 'default' ? '<span>В избранное</span>' }} 
+</button>

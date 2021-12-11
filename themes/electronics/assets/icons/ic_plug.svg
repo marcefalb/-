@@ -1,0 +1,16 @@
+<svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="1" width="39" height="38" rx="10" fill="white" fill-opacity="0.82"/>
+<rect x="6" y="32" width="29" height="3" rx="1.5" fill="#DADADA"/>
+<path d="M15.4999 23.6969L15.4999 9.60193C15.4999 9.45038 15.5631 9.30504 15.6756 9.19788C15.7881 9.09072 15.9407 9.03052 16.0999 9.03052L24.8998 9.03052C24.9786 9.03052 25.0566 9.0453 25.1294 9.07401C25.2022 9.10273 25.2684 9.14482 25.3241 9.19788C25.3798 9.25094 25.424 9.31394 25.4541 9.38326C25.4843 9.45259 25.4998 9.52689 25.4998 9.60193L25.4998 23.6969C25.4998 23.7719 25.4843 23.8462 25.4541 23.9155C25.424 23.9849 25.3798 24.0479 25.3241 24.1009C25.2684 24.154 25.2022 24.1961 25.1294 24.2248C25.0566 24.2535 24.9786 24.2683 24.8998 24.2683L16.0999 24.2683C15.9407 24.2683 15.7881 24.2081 15.6756 24.1009C15.5631 23.9938 15.4999 23.8484 15.4999 23.6969V23.6969Z" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.5 24.2693L22.5 26.6502" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.4999 24.2693L18.4999 26.6502" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.5 9.03105L22.5 6.65015" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.4999 9.03105L18.4999 6.65015" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.5 16.6499L13 16.6499" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 16.6499L25.5 16.6499" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.5 11.4124L13 11.4124" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 11.4124L25.5 11.4124" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.5 21.8877L13 21.8877" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 21.8877L25.5 21.8877" stroke="#DADADA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0.5" y="0.5" width="40" height="39" rx="10.5" stroke="#E2E2E2"/>
+</svg>

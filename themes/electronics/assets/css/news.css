@@ -1,0 +1,137 @@
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.news__wrapper {
+  padding: 20px;
+
+  background-color: #fff;
+  border-radius: 10px;
+}
+.news__title {
+  font-size: 32px;
+}
+.news__list {
+  display: flex;
+  flex-direction: column;
+}
+.news__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding: 20px 10px;
+
+  border-bottom: 1px solid var(--main);
+
+  transition: all .3s;
+}
+.news__item:first-child .news__link {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.news__link:hover {
+  background-color: var(--light);
+}
+.news__item_left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.news__item-title {
+  font-size: 22px;
+  font-weight: 600;
+  transition: all .3s;
+}
+.news__item-date {
+  color: var(--gray);
+  font-weight: 500;
+}
+.news__item-summary {
+  overflow: hidden;
+
+  font-size: 18px;
+  letter-spacing: 1.1;
+  height: 60px;
+  font-family: 'Marmelad', sans-serif;
+
+  transition: all .3s;
+}
+.news__item_right,
+.news__item_right img {
+  max-height: 100px;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.news-item__block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 20px !important;
+
+  background-color: #fff;
+  border-radius: 10px;
+}
+.news-item__date {
+  color: var(--gray);
+}
+.news-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.news-item__content p {
+  font-family: 'Marmelad', sans-serif;
+  line-height: 1.5;
+  letter-spacing: 1.1;
+}
+.news-item__img {
+  margin-bottom: 30px;
+
+  border-radius: 10px;
+}
+.news-item__img img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 576px) {
+	.news__item_right {
+		display: none;
+	}
+	.news__item-title {
+		font-size: 18px;
+		height: 40px;
+		overflow: hidden;
+	}
+	
+	.news__item-date {
+		font-size: 14px;
+	}
+	.news__item-summary {
+		font-size: 16px;
+		height: 36px;
+		overflow: hidden;
+	}
+	.news-item__content p {
+		text-align: justify;
+	}
+	.news__title {
+		font-size: 24px;
+		text-align: center;
+	}
+}

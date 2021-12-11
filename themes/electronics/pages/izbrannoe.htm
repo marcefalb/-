@@ -1,0 +1,51 @@
+title = "Избранное"
+url = "/izbrannoe"
+layout = "default"
+meta_title = "Избранное"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Products]
+==
+<link rel="stylesheet" href="{{ 'assets/css/fav.css'|theme }}">
+
+<section class="fav">
+  <div class="wrapper fav__wrapper">
+    <h1 class="title">Избранное</h1>
+    <ul class="fav__list">
+
+      {% set products = Products.favsList %}
+      {% if products %}
+      
+      	{% for product in products %}
+
+	        <li class="fav__item">
+	          <a href="{{ 'tovar'|page({id: product.id}) }}" class="fav__link">
+	            {% partial 'buttons/del' id=product.id %}
+	            <div class="fav__link_left">
+	              {% if product.image_1.path %}
+	                <img src="{{ product.image_1.path }}" alt="">
+	              {% else %}
+	                <img src="{{ 'assets/icons/ic_plug.svg'|theme }}" alt="">
+	              {% endif %}
+	            </div>
+	            <div class="fav__link_right">
+	              <span class="fav__name">{{ product.name }}</span>
+	              <div class="fav__summary">{{ product.brief_specifications|raw }}</div>
+	              <div class="fav_bottom">
+	              	<span class="fav__price">{{ product.price }} Р</span>
+	              	{% partial 'buttons/cart' id=product.id %}
+	              </div>
+	            </div>
+	          </a>
+	        </li>
+	
+	      {% endfor %}
+
+			{% else %}
+				<li class="plug">Список пуст...</li>
+			{% endif %}
+    </ul>
+  </div>
+</section>

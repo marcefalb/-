@@ -1,0 +1,99 @@
+title = "Список товаров"
+url = "/spisok-tovarov"
+layout = "default"
+description = "Список товаров по выбранной категории"
+meta_title = "Список комплектующих"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<?php
+function onEnd() {
+//	$this->layout->components['SeoCmsPage']->seo_title = $this->layout->components['Products']->currentType . ' найдено ' . $this->layout->components['Products']->productsCount;
+}
+?>
+==
+<link rel="stylesheet" href="{{ 'assets/css/products-list.css'|theme }}">
+
+<section class="prod-list">
+  <div class="wrapper prod-list__wrapper">
+    <h1 class="title">
+    	{% if Products.search %}
+    		{{ Products.search }} - найдено {{ Products.productsCount }}
+    	{% elseif Products.currentType %}
+      	{{ Products.currentType }} - найдено {{ Products.productsCount }}
+      {% else %}
+      	Все комплектующие - найдено {{ Products.productsCount }}
+      {% endif %}
+    </h1>
+    <div class="prod-list__blocks">
+      <div class="prod-list__block_left">
+
+        {% partial 'general/navbar' %}
+
+        
+      </div>
+      <div class="prod-list__block_right">
+        <div class="prod-list__params">
+          <form class="prod-list__search form__search">
+            <input type="text" name="search" placeholder="Введите запрос" value={{ Products.search }}>
+            <button><img src="{{ 'assets/icons/ic_search.svg'|theme }}" alt=""></button>
+          </form>
+          <select name="sort" id="sort">
+            <option value="Сначала дешевые" {{ Products.sort == 'Сначала дешевые' ? 'selected' }}>Сначала дешевые</option>
+            <option value="Сначала дорогие" {{ Products.sort == 'Сначала дорогие' ? 'selected' }}>Сначала дорогие</option>
+          </select>
+        </div>
+        <ul class="prod-list__list">
+
+          {% set products = Products.products %}
+          {% if products %}
+	          {% for product in products %}
+	
+	            <li class="prod-list__item">
+	              <a href="{{ 'tovar'|page({id: product.id}) }}" class="prod-list__link">
+	
+	                <div class="prod-list__item_left">
+	                	{% if product.image_1.path %}
+	                  	<img src="{{ product.image_1.path }}" alt="">
+	                  {% else %}
+	                  	<img style="width: 100%" src="{{ 'assets/icons/ic_plug.svg'|theme }}" alt="">
+	                  {% endif %}
+	                </div>
+	
+	                <div class="prod-list__item-right">
+	                  <span class="prod-list__item-name">{{ product.name }}</span>
+	
+	                  <div class="prod-list__item-row">
+	                    <span class="prod-list__item-title">Категория:</span>
+	                    <span class="prod-list__item-type">{{ product.type }}</span>
+	                  </div>
+	
+	                  <div class="prod-list__item-row">
+	                    <span class="prod-list__item-title">Производитель:</span>
+	                    <span class="prod-list__item-company">{{ product.company }}</span>
+	                  </div>
+	
+	                  <span class="prod-list__item-price">{{ product.price }} Р</span>
+	
+	                  <div class="prod-list__item-btns">
+	                    {% partial 'buttons/like' type="default" id=product.id %}
+	                    {% partial 'buttons/cart' type="default" id=product.id %}
+	                  </div>
+	                </div>
+	              </a>
+	            </li>
+	
+	          {% endfor %}
+					{% else %}
+					
+						<h2>Ничего не найдено...</h2>
+						
+					{% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ 'assets/js/list.js'|theme}}"></script>

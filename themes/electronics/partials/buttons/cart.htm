@@ -1,0 +1,6 @@
+description = "Кнопка \"В корзину\""
+==
+<button class="to-cart" data-request-data="id:{{ id }}" data-id="{{ id }}">
+	{% partial 'icons/cart' %}
+	{{ type == "default" ? '<span>В корзину</span>' }}
+</button>

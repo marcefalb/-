@@ -1,0 +1,18 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+        width: 10%
+    name:
+        label: Название
+        type: text
+        searchable: true
+        sortable: true
+        width: 80%
+    updated_at:
+        label: 'Дата обновления'
+        type: date
+        sortable: true
+        width: 10%

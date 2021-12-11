@@ -1,0 +1,71 @@
+title = "Корзина"
+url = "/korzina"
+layout = "default"
+description = "Страница корзины пользователя"
+meta_title = "Корзина"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[builderList products]
+modelClass = "Marcefalb\Shop\Models\Products"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "id"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<link rel="stylesheet" href="{{ 'assets/css/cart.css'|theme }}">
+
+<section class="cart">
+  <div class="wrapper cart__wrapper">
+    <h1 class="title">Корзина</h1>
+    <div class="cart__block">
+      <ul class="cart__list">
+
+        {% set products = Products.cartList %}
+        {% if products %}
+        
+	      	{% for product in products %}
+	
+	        <li class="cart__item" data-price="{{ product.attributes.price }}">
+	          {% partial 'buttons/del' id=product.id %}
+	          <div class="cart__img">
+							{% if product.image_1.path %}
+								<img src="{{ product.image_1.path }}" alt="">
+							{% else %}
+								<img src="{{ 'assets/icons/ic_plug.svg'|theme }}" alt="">
+							{% endif %}
+	          </div>
+	          <div class="cart__info">
+	            <span class="cart__name">{{ product.attributes.name }}</span>
+	            <span class="cart__price">{{ product.attributes.price }} &#x20bd;</span>
+	            <div class="cart__counter">
+	              <button class="cart__counter_minus">
+	                <img src="{{ 'assets/icons/ic_minus.svg'|theme }}" alt="-">
+	              </button>
+	              <input type="text" value="1" maxlength="2">
+	              <button class="cart__counter_plus">
+	                <img src="{{ 'assets/icons/ic_plus.svg'|theme }}" alt="+">
+	              </button>
+	            </div>
+	          </div>
+	        </li>
+	        
+	      {% endfor %}
+
+				{% else %}
+					<li class="plug">Список пуст...</li>
+				{% endif %}
+
+      </ul>
+      <div class="cart__payment">
+        <span>Итого</span>
+        <p>12 000 P</p>
+        <a href="{{ '/oplata' }}">Купить</a>
+      </div>
+    </div>
+  </div>
+</section>

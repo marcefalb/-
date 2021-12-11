@@ -1,0 +1,23 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table marcefalb_shop_types'
+    - builder_table_create_marcefalb_shop_types.php
+1.0.3:
+    - 'Created table marcefalb_shop_products'
+    - builder_table_create_marcefalb_shop_products.php
+1.0.4:
+    - 'Updated table marcefalb_shop_types'
+    - builder_table_update_marcefalb_shop_types.php
+1.0.5:
+    - 'Updated table marcefalb_shop_products'
+    - builder_table_update_marcefalb_shop_products.php
+1.0.6:
+    - 'Updated table marcefalb_shop_types'
+    - builder_table_update_marcefalb_shop_types_2.php
+1.0.7:
+    - 'Updated table marcefalb_shop_products'
+    - builder_table_update_marcefalb_shop_products_2.php
+1.0.8:
+    - 'Updated table marcefalb_shop_products'
+    - builder_table_update_marcefalb_shop_products_3.php

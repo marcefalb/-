@@ -1,0 +1,21 @@
+fields:
+    name:
+        label: 'Название типа'
+        span: auto
+        placeholder: Видеокарта
+        type: text
+    image:
+        label: Изображение
+        mode: image
+        fileTypes: 'png, jpg'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+    description:
+        label: Описание
+        size: large
+        span: full
+        type: textarea

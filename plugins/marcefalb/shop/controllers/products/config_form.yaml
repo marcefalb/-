@@ -1,0 +1,10 @@
+name: Products
+form: $/marcefalb/shop/models/products/fields.yaml
+modelClass: Marcefalb\Shop\Models\Products
+defaultRedirect: marcefalb/shop/products
+create:
+    redirect: 'marcefalb/shop/products/update/:id'
+    redirectClose: marcefalb/shop/products
+update:
+    redirect: marcefalb/shop/products
+    redirectClose: marcefalb/shop/products

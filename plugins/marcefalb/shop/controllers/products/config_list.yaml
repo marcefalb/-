@@ -1,0 +1,12 @@
+list: $/marcefalb/shop/models/products/columns.yaml
+modelClass: Marcefalb\Shop\Models\Products
+title: Products
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'marcefalb/shop/products/update/:id'
